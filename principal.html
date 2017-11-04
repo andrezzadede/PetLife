@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css/style.css" rel="stylesheet">
+        
+        <link rel="icon" type="jpg" href="logo.jpg" />
+        <title>PetLife</title>
+        <style> 
+            body {
+            background-image: url("imagens/6i.jpg"); background-size: ; background-repeat: no-repeat;
+            -webkit-animation-name: showimagens;
+            -webkit-animation-duration: 40s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+        }
+            .panel{background:rgba(255,255,255,0);}
+            .footer{position: absolute; width: 100%; height: 50px; 
+            bottom:0; left:0;}
+            .input-group input {background: rgba(255,255,255,0);}
+            .panel-heading h4{font-family: 'Indie Flower', cursive; font-size: 45px; animation-name: flash;}
+            .cadastro h4 a:hover {animation-name: flash;} @keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+  animation-duration: .75s;
+}
+/* @keyframes showimagens 
+    0% {
+        background-image:url("imagens/1i.jpg");
+    }
+    25%{
+        background-image:url("imagens/2i.jpg");
+    }
+    50%{
+        background-image:url("imagens/3i.jpg");
+    }
+    75%{
+        background-image:url("imagens/4i.jpg");
+    }
+  
+ */
+        </style>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" style="margin-top: 5%;">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel ">
+                    <div class="panel-heading"><h4 class="animated flash" style="text-align:center;
+                        ">Inicie sessão em PetLife</h4></div>
+                    <div class="panel-body">
+                        <form role="form" method="POST" action="login.php">
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <div class="input-group">
+                                        <input class="form-control" id="username" type="text" 
+                                        name="username" required/>
+                                        <input class="form-control" id="password" type="password" 
+                                        name="password" required/>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <center> 
+                                    <input type="submit" style="background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" class="btn btn-default" value="Entrar">
+                                </center>
+                                </div>
+                            </div>
+                            </form>
+                            <div class="row cadastro" onclick="javascript:location.href='cadastro.html'"><h4 style="text-align:center;">Você ainda não faz parte da família PetLife? 
+                                <a class="animated flash" style= "color:black" href="##">Cadastre-se</a></h4></div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <footer class="footer">
+                        <div class="container">
+                          <span class="text-muted">Copyright &copy; 2017 PetLife Inc. Todos os direitos reservados</span>
+                        </div>
+                      </footer>
+                  
+    </body>
+    </html>
