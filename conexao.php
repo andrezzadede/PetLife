@@ -24,4 +24,17 @@ function selectDb(){
   }
 }
 
+function getnamepet($id){
+    $con = open_database(); 
+    selectDb();   
+    $sql="select * from pet where id='$id'";
+    $rs=mysql_query($sql);
+    if($rs){
+        $pet=mysql_fetch_array($rs);
+        return $pet["nome"];
+    }
+    return "Não foi encontrado";
+   
+}
+
 ?>

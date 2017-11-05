@@ -1,4 +1,5 @@
 <?php
+
     require_once('conexao.php'); 
 
     $nome  = trim($_POST['txtNome']);
@@ -10,30 +11,12 @@
     $celular = trim($_POST['txtCelular']);
     $telefone = trim($_POST['txtTelefone']);
     $senha = trim($_POST['txtSenha']);
+    $senhamd5=md5($senha);
 
- /*    echo $nome;
-    echo "<br>";
-    echo $sobrenome;
-    echo "<br>";
-    echo $nascimento;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $cidade;
-    echo "<br>";
-    echo $uf;
-    echo "<br>";
-    echo $celular;
-    echo "<br>";
-    echo $telefone;
-    echo "<br>";
-    echo $senha;
-    echo "<br>";
- */
       $con = open_database(); 
       selectDb();   
       $sql = "INSERT INTO cliente (nome, sobrenome, nascimento, email, cidade, uf, celular, telefone, senha)"; 
-      $sql.= " VALUES  ('$nome', '$sobrenome', '$nascimento', '$email', '$cidade', '$uf', '$celular', '$telefone', '$senha');";
+      $sql.= " VALUES  ('$nome', '$sobrenome', '$nascimento', '$email', '$cidade', '$uf', '$celular', '$telefone', '$senhamd5');";
       $ins = mysql_query($sql); 
       close_database($con); 
       if ($ins==FALSE)
@@ -44,5 +27,5 @@
       }
       echo $msg; 
     
-    header("location: listaCli.php")
+    header("location: principal.html")
 ?>
