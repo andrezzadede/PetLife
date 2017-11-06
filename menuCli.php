@@ -40,7 +40,8 @@ if(!isset($_SESSION['Cliente'])){
             
             <input style="opacity:0;" type="text" readonly value="<?php echo $id ?>" id="id" class="btn btn-default">
       <span style="padding-left:110px;">My Pets</span>
-            <select style="margin-right:240px; background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" id="pet">
+      <select style="margin-right:240px; background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" id="pet">
+           <option>Selecione</option>
            <?php
            require_once('conexao.php'); 
            $con = open_database(); 
@@ -80,6 +81,7 @@ if(!isset($_SESSION['Cliente'])){
 <script src="jquery/jquery.js">
 </script>
 <script>
+    // Função que pega o id do cliente e o id do pet e envia por post sem precisar atualizar a pagina e pegar os dados do pet que o cliente selecionou
     function dadospet(id, idpet){
         var pag="dados.php";
         $.ajax

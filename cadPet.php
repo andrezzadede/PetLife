@@ -1,5 +1,11 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['Cliente'])){
+    die("Fique a vontade, não tem ninguém logado");
+}else{
+    $nome=$_SESSION['Cliente'];
+    $id=$_SESSION['id'];
+}
     require_once('conexao.php'); 
 
     $Nome  = trim($_POST['txtNome']);
@@ -8,11 +14,13 @@
     $Tipo = trim($_POST['txtTipo']); 
     $Porte = trim($_POST['txtPorte']);
     $Nasci = trim($_POST['txtNasci']);
+    
+  
 
       $con = open_database(); 
       selectDb();   
-      $sql = "INSERT INTO pet (nome, raca, cor, tipo, porte, nasci)"; 
-      $sql.= " VALUES  ('$Nome', '$Raca', '$Cor', '$Tipo', '$Porte', '$Nasci');";
+      $sql = "INSERT INTO pet (nome, raca, cor, tipo, porte, nasci, dono)"; 
+      $sql.= " VALUES  ('$Nome', '$Raca', '$Cor', '$Tipo', '$Porte', '$Nasci', '$id');";
       $ins = mysql_query($sql); 
        
       if ($ins==FALSE){
@@ -22,9 +30,6 @@
       
       }
       echo $msg; 
-      session_start();
-         if(isset($_SESSION['id'])){
-         $id=$_SESSION['id'];
          $sql="select * from pet where nome='$Nome'";
          $rs=mysql_query($sql);
          $pet=mysql_fetch_array($rs);
@@ -34,7 +39,7 @@
          unset($Nome, $Raca, $Cor, $Tipo, $Porte, $Nasci); 
          close_database($con);
        header("location: menuCli.php");
-  }
+  
   
 ?>
 

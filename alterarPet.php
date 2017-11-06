@@ -97,8 +97,8 @@ if(!isset($_SESSION['Cliente'])){
           <div class="col-sm-offset-2 col-sm-10">
                 <center>
                         <input type="submit" style="background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" class="btn btn-default" value="Alterar">
-                        <button type="submit" style="background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" 
-                        onclick="deletar(<?php echo $pet?>)" class="btn btn-default">Deletar</button>
+                        <a style="background: rgba(255,255,255,0); box-shadow:3px 2px 3px rgba(0,0,0,.3);" 
+                        onclick="deletar(<?php echo $pet?>)" class="btn btn-default">Deletar</a>
                       </center>
           </div>
         </div>
